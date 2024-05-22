@@ -1,0 +1,220 @@
+::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  background-color: white;
+}
+
+.harms-section {
+  padding-top: 115px;
+  padding-bottom: 110px;
+  padding-left: 23%;
+  padding-right: 23%;
+}
+
+.master-box {
+  margin: auto;
+  background: #f5f7ff;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.master-box:hover {
+  box-shadow: 0 0 4px 2px var(--thm-blue);
+  transition-duration: 0.25s;
+}
+
+.faq-header {
+  background: #f5f7ff;
+  padding-top: 40px;
+  padding-bottom: 25px;
+  text-align: center;
+  color: white;
+}
+
+.filter-search {
+  letter-spacing: 5px;
+  background: #f5f7ff;
+  width: max-content;
+  margin: auto;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-bottom: 8px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* Style the buttons */
+.btn {
+  -webkit-appearance: none;
+  border: none;
+  outline: none !important;
+  background-color: var(--thm-primary);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 900;
+  transition: 500ms;
+  padding-right: 25px;
+  vertical-align: middle;
+  border-radius: 15px;
+  margin-top: 8px;
+}
+
+.btn:hover {
+  background: #4369bb;
+  color: white;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.3), 0 3px 5px 0 rgba(0, 0, 0, 0.3);
+  transition: all 0.2s ease;
+}
+
+.btn.active {
+  background: #4369bb;
+  color: white;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.3), 0 3px 5px 0 rgba(0, 0, 0, 0.3);
+}
+
+.btn::before {
+  content: '\00bb   ';
+  font-size: 18px;
+  opacity: 0;
+  transition: 0.4s;
+}
+
+.btn.active::before {
+  content: '\00bb   ';
+  opacity: 1;
+  transition: 0.5s;
+}
+
+#myUL {
+  list-style-type: none;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.01);
+  padding: 18px 35px;
+}
+
+#myUL li span {
+  cursor: pointer;
+  -moz-transition: all 0.35s ease;
+  -ms-transition: all 0.35s ease;
+  -o-transition: all 0.35s ease;
+  -webkit-transition: all 0.35s ease;
+  margin-top: -1px;
+  padding: 10px 0px 10px 0px;
+  margin: 0;
+  text-decoration: none;
+  font-size: 16px;
+  display: block;
+
+}
+
+
+.filterDiv {
+  display: none;
+  /* Hidden by default */
+  transition: all 0.3s;
+  margin-bottom: 4px;
+  padding: 18px 35px;
+  background-color: var(--white);
+  -webkit-box-shadow: 0px 10px 30px 0px rgba(0, 0, 2, 0.06);
+  box-shadow: 0px 10px 30px 0px rgba(0, 0, 2, 0.06);
+}
+
+.show {
+  display: block;
+}
+
+.accordion-thumb {
+  font-weight: bold;
+  line-height: 0.8;
+  color: var(--thm-blue);
+  position: relative;
+  cursor: pointer;
+}
+
+/* Active answer */
+.filterDiv.is-active .accordion-thumb::before {
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.accordion-thumb::before {
+  content: '';
+  display: inline-block;
+  height: 7px;
+  width: 7px;
+  margin-right: 1rem;
+  margin-left: .5rem;
+  vertical-align: middle;
+  border-right: 1px solid;
+  border-bottom: 1px solid;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  transition: -webkit-transform .2s ease-out;
+  transition: transform .2s ease-out;
+  transition: transform .2s ease-out, -webkit-transform .2s ease-out;
+  background-color: #c60404;
+  width: 13px;
+  height: 8px;
+}
+
+.accordion-panel {
+  padding: 10px 20px 10px 20px;
+  display: none;
+  color: var(--thm-blue);
+  text-align: justify;
+  font-size: medium;
+}
+
+/* Media quries */
+@media (max-width:1257px) {
+  .accordion-thumb {
+      line-height: normal !important;
+  }
+}
+
+@media (max-width:1015px) {
+  .filter-search {
+      max-width: fit-content !important;
+  }
+}
+
+@media (max-width: 1100px) {
+  .harms-section {
+      padding-left: 15% !important;
+      padding-right: 15% !important;
+  }
+}
+
+@media (max-width: 590px) {
+  .master-box:hover {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+}
+
+@media (max-width:790px) {
+  .harms-section {
+      padding-left: 3.5% !important;
+      padding-right: 3.5% !important;
+  }
+
+  .filter-search {
+      margin-top: -65px !important;
+  }
+
+  #myUL {
+      padding-left: 10px !important;
+      padding-right: 10px !important;
+  }
+
+  .filterDiv {
+      padding-left: 2px !important;
+      padding-right: 2px !important;
+  }
+
+  .accordion-panel {
+      padding-left: 3px !important;
+      padding-right: 3px !important;
+  }
+}

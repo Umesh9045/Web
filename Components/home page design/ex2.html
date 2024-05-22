@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Our Team</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+    <link href="http://fonts.cdnfonts.com/css/cavolini" rel="stylesheet">
+
+    <!-- Demo styles -->
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            font-family: 'Sofia';
+            font-size: 28px;
+            padding-top: 1%;
+            text-align: center;
+            background-color: #F5F7FF;
+
+            overflow: hidden;
+            position: fixed;
+            width: 100%;
+        }
+
+        body {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            padding: 0.7rem 0.7rem;
+            padding-top: 0%;
+            background: #F5F7FF;
+            font-family: "Inter", sans-serif;
+            font-weight: 300;
+            overflow-y: scroll;
+        }
+
+        section {
+            min-height: 100vh;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: aliceblue;
+        }
+
+
+        .swiper {
+            width: 240px;
+            height: 320px;
+        }
+
+        .swiper-slide {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 18px;
+            font-size: 22px;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .swiper-slide:nth-child(1n) {
+            background-color: rgb(180, 10, 47);
+        }
+
+      
+        .swiper-slide:nth-child(2n) {
+            background-color: rgb(35, 99, 19);
+        }
+
+        .swiper-slide:nth-child(3n) {
+            background-color: rgb(211, 122, 7);
+        }
+
+        .swiper-slide:nth-child(4n) {
+            background-color: rgb(218, 12, 218);
+        }
+
+        .swiper-slide:nth-child(5n) {
+            background-color: rgb(0, 68, 255);
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <p>Student Helpdesk Portal</p>
+    </header>
+    <!-- Swiper -->
+    <section>
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">Umesh Sonawane</div>
+                <div class="swiper-slide">Atharv Garje</div>
+                <div class="swiper-slide">Aayush Birari</div>
+                <div class="swiper-slide">Shivank Yadav</div>
+            </div>
+        </div>
+    </section>
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            effect: "cards",
+            grabCursor: true,
+        });
+    </script>
+</body>
+
+</html>

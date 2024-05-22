@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Form</title>
+    <link rel="stylesheet" href="paymentstyle.css">
+</head>
+
+<body>
+    <form>
+        <div class="start">
+            <h1 class="main_heading">Payment Form</h1>
+            <hr class="line">
+        </div>
+        <fieldset class="container">
+            <legend>
+                <h2 class="subheading">User Information</h2>
+            </legend>
+
+            <p>Name: <input type="text" placeholder="Surname_MiddleName_FatherName" name="name" required></p>
+            <p>
+                Gender:
+                Male<input type="radio" name="r3" id="male" required>
+                Female<input type="radio" name="r3" id="female" required>
+            </p>
+            <p>Email: <input type="email" placeholder="example@email.com" name="email" id="email" required></p>
+            <p>Mobile No. <input type="number" placeholder="(default +91 - ) Enter your mobile no." name="mobile no."
+                    id="mobile no" required></p>
+            <p>Address: <textarea name="address" placeholder="Enter your residental address" id="address" cols="20"
+                    rows="5" required></textarea></p>
+            <p>Pincode: <input type="number" placeholder="Enter pincode" name="pincode" id="pincode" required></p>
+            <p>Zipcode: <input type="number" placeholder="Enter zipcode if available" name="zipcode" id="zipcode"></p>
+        </fieldset>
+        <fieldset class="container">
+            <legend>
+                <h2 class="subheading">Payment Information</h2>
+            </legend>
+            <p>
+                Card Type:
+                <select name="card_type" id="card_type" required>
+                    <option value=""> -Select Card Type- </option>
+                    <option value="Debit Card">Debit Card</option>
+                    <option value="Credit Card">Credit Card</option>
+                    <option value="Rupay Card">Rupay Card</option>
+                </select>
+            </p>
+            <p>Accound Holder Name: <input type="text" required></p>
+            <p>
+                Card CVV No: <input type="password" name="CVV no" id="cvv no" required>
+            </p>
+            <p>Card Expiry No. <input type="Date" name="expiry no" id="expiry no" required></p>
+        </fieldset>
+
+        <fieldset class="container1">
+            <legend>
+                <h2 class="subheading">Conformation</h2>
+            </legend>
+            <b>*You are Making a payment to Prime India*</b><br>
+            After click on <b>Continue to Payment</b> button, you won't be able to proceed back<br>
+            So fill the all details carefully!<br><br>
+
+            <input type="checkbox" name="Conformation" required><strong>I am agree with all terms and conditions and
+                also responssible for all payment related process from myside</strong>
+        </fieldset>
+        <br>
+        <input type="submit" value="Continue to Payment">
+        <input type="reset" value="Reset"></p>
+
+
+    </form>
+
+</body>
+
+</html>

@@ -1,0 +1,110 @@
+:root {
+	--thm-font: 'Nunito', sans-serif;
+	--thm-reey-font: 'reeyregular';
+	--thm-gray: #707876;
+	--thm-gray-rgb: 112, 120, 118;
+	--thm-primary: #15c8a0;
+	--thm-primary-rgb: 21, 200, 160;
+	--thm-black: #1f2230;
+	--thm-black-rgb: 31, 34, 48;
+	--thm-blue: #001d23;
+}
+
+
+/*====== Header Section =====*/
+.main-menu-wrapper__left-content {
+	display: flex;
+	align-items: center;
+	font-weight: bolder;
+}
+
+
+/*======= need help Section =======*/
+.need-help .container {
+	position: relative;
+	z-index: 2;
+	margin-top: -96px;
+	padding-top: 30px;
+}
+
+.need-help .container::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: -90px;
+	right: -90px;
+	z-index: -1;
+	height: 100%;
+}
+
+
+/*======= Project Section =======*/
+.project-section.project-section-extra-gap {
+	padding-top: 100px;
+	padding-bottom: 210px;
+	background-color: var(--thm-blue);
+}
+
+.project-section.project-section-extra-gap .title {
+	color: white;
+	margin-bottom: 55px;
+	margin-top: 0;
+}
+
+.project-section.project-section-two {
+	padding-top: 115px;
+	position: relative;
+	z-index: 1;
+}
+
+.project-section.project-section-two::before {
+	content: none;
+	position: absolute;
+	z-index: -1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 79%;
+	background-color: var(--thm-blue);
+}
+
+.news-two__meta li a {
+	font-size: 24px;
+	color: var(--thm-gray);
+	font-weight: 800;
+}
+
+
+.news-two__content h3 a:hover {
+	color: var(--thm-black);
+	text-decoration: none;
+}
+
+
+/*======= Introduction Section =======*/
+.introduction__text {
+	text-align: center;
+	font-size: 25px;
+}
+
+
+
+
+/*======= Counter Section =======*/
+.counters-one .container {
+	position: relative;
+	z-index: 2;
+	margin-top: -110px;
+	padding-top: 10px;
+
+}
+
+.counters-one .container::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: -90px;
+	right: -90px;
+	z-index: -1;
+	height: 100%;
+}

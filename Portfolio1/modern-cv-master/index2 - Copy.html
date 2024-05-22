@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Umesh's Portfolio</title>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.3/css/unicons.css">
+    <link rel="stylesheet" href="./plugins/headline/headline.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+</head>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap');
+
+    html {
+        font-size: 62.5%;
+        scroll-behavior: smooth;
+    }
+
+    /* Colors */
+    :root {
+        --primary: #1a253f;
+        --dark: #151A33;
+        --secondary: #2b55cc;
+        --info: #4d79f6;
+        --ternary: #848db3;
+        --pure: #eff2f9;
+        --fade: #7081b9;
+        --mild: #8997bd;
+        --footer: #212A4A;
+        --black: #060b1b;
+        --twitter: #4ac7ec;
+        --dribbble: #ff5da0;
+        --success: #1ecab8;
+        --danger: #f1646c;
+        --dark-blue: #28365f;
+        --dark-gray: #171f33;
+        --yellow: #f3c74d;
+    }
+
+    /* Reset  */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        text-transform: capitalize;
+        transition: all .2s linear;
+    }
+
+    body {
+        font-family: 'IBM Plex Sans', sans-serif;
+        background: var(--dark);
+        -webkit-font-smoothing: antialiased;
+        padding-bottom: 4rem;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin: 0;
+        line-height: 1;
+    }
+
+    .container {
+        max-width: 1140px;
+        margin: 0 auto;
+    }
+
+
+    section {
+        padding: 3rem;
+    }
+
+    main {
+        background: var(--primary);
+    }
+
+
+    /* teams section styling */
+    section.teams {
+        background: var(--black);
+        padding: 1rem;
+        font-family: sans-serif;
+    }
+
+    section.teams .heading {
+        color: #F5F7FF;
+        text-align: center;
+    }
+
+    .teams .carousel .card {
+        background: #F5F7FF;
+        border-radius: 6px;
+        text-align: center;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        padding: auto;
+    }
+
+    .teams .carousel .card:hover {
+        background: var(--dark);
+    }
+
+    .teams .carousel .card .box:hover>* {
+        color: #1ecab8;
+    }
+
+
+    .teams .carousel .card:hover .box {
+        transform: scale(1.05);
+    }
+
+    .teams .carousel .card .box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+    }
+
+
+    .teams .carousel .card img {
+        /*   height: 100px;
+       width: 150px; */
+        transition: all 0.3s ease;
+        width: 95%;
+        margin: auto;
+        border: 3px solid #ddd;
+        /* Gray border */
+        border-radius: 4px;
+        /* Rounded border */
+        align-self: center;
+        /* Some padding */
+    }
+
+    .teams .carousel .card:hover img {
+        border-color: #fff;
+    }
+
+    .owl-dots {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .owl-dot {
+        height: 13px;
+        width: 13px;
+        margin: 0 5px;
+        outline: none !important;
+        border-radius: 50%;
+        border: 2px solid crimson !important;
+        transition: all 0.3s ease;
+    }
+
+    .owl-dot.active {
+        width: 35px;
+        border-radius: 14px;
+    }
+
+    .owl-dot.active,
+    .owl-dot:hover {
+        background: crimson !important;
+    }
+
+
+    /* Section 6 - Contact */
+    section.contact .wrapper {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        grid-gap: 60px;
+        margin-top: 40px;
+        align-items: center;
+    }
+
+    section.contact .wrapper .left>div {
+        display: flex;
+        align-items: center;
+        margin-bottom: 40px;
+    }
+
+    section.contact .wrapper .left>div div:nth-child(1) {
+        margin-right: 10px;
+    }
+
+
+    section.contact .wrapper .left i {
+        font-size: 30px;
+        color: var(--info);
+    }
+
+    section.contact .wrapper .left span {
+        color: var(--pure);
+    }
+
+    section.contact .wrapper .left h4 {
+        font-weight: 700;
+        font-size: 16px;
+        margin-bottom: 5px;
+    }
+
+    section.contact .wrapper .left {
+        color: var(--ternary);
+    }
+
+    section.contact .wrapper .left h4+span {
+        font-weight: 100;
+        font-size: 14px;
+    }
+
+    section.contact .wrapper .right .form__group {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 30px;
+        align-items: center;
+        margin-bottom: 14px;
+    }
+
+    section.contact .wrapper .right .form__group>div {
+        display: flex;
+        flex-direction: column;
+    }
+
+    section.contact .wrapper .right .form__group>div label {
+        color: var(--ternary);
+        margin-bottom: 8px;
+    }
+
+    section.contact .wrapper .right .form__group>div input,
+    section.contact .wrapper .right .form__group.textarea__wrapper textarea {
+        padding: 10px;
+        border-radius: 4px;
+        background: transparent;
+        border: 1px solid var(--dark-blue);
+        color: var(--ternary);
+        font-size: 16px;
+    }
+
+    section.contact .wrapper .right .form__group>div input:focus,
+    section.contact .wrapper .right .form__group.textarea__wrapper textarea:focus {
+        border-color: var(--secondary);
+        outline: none;
+    }
+
+    section.contact .wrapper .right .form__group.textarea__wrapper {
+        display: block;
+        width: 100%;
+    }
+
+    section.contact .wrapper .right button {
+        background: var(--info);
+        border: none;
+        padding: 1rem 2rem;
+        color: var(--pure);
+        font-size: 14px;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: all .3s ease-in-out;
+    }
+
+    section.contact .wrapper .right button:hover {
+        background: var(--secondary);
+
+    }
+
+    /* Footer */
+    footer {
+        background: var(--black);
+        text-align: center;
+        padding: 2rem 0;
+        font: 16px Poppins, sans-serif;
+        color: var(--pure);
+    }
+
+    footer b {
+        color: red;
+    }
+</style>
+
+<body>
+    <main class="container">
+        <!-- Certificates section starts  -->
+        <section class="teams" id="teams">
+            <div class="max-width"><br><br>
+                <h1 class="heading">My Achievements</h1><br>
+                <div class="carousel owl-carousel">
+
+                    <div class="card">
+                        <div class="box">
+
+                            <img src="images/six_sigma.png" alt="">
+                            <br>
+                            <h2>SixSigma White Belt</h2>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="box">
+                            <br>
+                            <img src="images/webDev.jpg" alt="">
+                            <br>
+                            <h2>Certified Web Developer</h2>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="box">
+                            <br>
+                            <img src="images/python.png" alt="">
+                            <br>
+                            <h2>Python Certification</h2>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="box">
+
+                            <img src="images/GameDevCoursera.jpg" alt="">
+                            <br>
+                            <h2>Game development</h2>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="box">
+                            <br>
+                            <img src="images/forage.png" alt="">
+                            <br>
+                            <h2>Web Design</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- certificates section ends -->
+
+        <!-- Contact us section starts -->
+        <section class="contact">
+            <h1 class="section__heading">Contact Me</h1>
+            <div class="wrapper">
+                <div class="left">
+                    <div>
+                        <div><i class="uil uil-phone-volume"></i></div>
+                        <div>
+                            <h4>Free Call To Me:</h4>
+                            <span><a href="tel:+919119477320"><span>+91 91194 77320</span></a>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div><i class="uil uil-envelope"></i></div>
+                        <div>
+                            <h4>Mail Me:</h4>
+                            <a
+                                href="mailto:umeshsonawane9045@gmail.com.com?Subject=Hello%20again"><span>umeshsonawane9045@gmail.com</span></a>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div><i class="uil uil-map-marker"></i></div>
+                        <div>
+                            <h4>Find Me:</h4>
+                            <span>Sawata Nagar, New Nashik, Nashik, Maharashtra, India</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="right">
+                    <form action="https://formsubmit.co/2ee9103f77e583b28c8124bc304e8a4b" method="POST">
+                        <div class="form__group">
+                            <div>
+                                <label for="name">Name</label>
+                                <input type="text" id="name" required>
+                            </div>
+                            <div>
+                                <label for="email">Email</label>
+                                <input type="email" id="email" required>
+                            </div>
+                        </div>
+
+                        <div class="form__group textarea__wrapper">
+                            <div>
+                                <label for="message">Message</label>
+                                <textarea name="message" id="message" cols="30" rows="4" required></textarea>
+                            </div>
+                        </div>
+
+                        <input type="hidden" name="_captcha" value="false">
+                        <div class="form-group">
+                            <div class="g-recaptcha" data-sitekey="6Le2hDIfAAAAAJi5soUjQcHJ_W8jiHfFtUjpAIu6" required>
+                            </div>
+                        </div>
+                        <br>
+                        <input type="hidden" name="_next"
+                            value="https://umesh9045.github.io/Student-Helpdesk/thanks.html">
+                        <button type="submit">Submit Now</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <!-- Contact us Section ends -->
+
+        <footer>
+            <span>Created with ❤️ by <b> Umesh Sonawane</b> | <span class="far fa-copyright"></span> 2022 All rights
+                reserved.</span>
+        </footer>
+    </main>
+
+    <script>
+        $(document).ready(function () {
+
+            // owl carousel script
+            $('.carousel').owlCarousel({
+                margin: 20,
+                loop: true,
+                autoplay: true,
+                autoplayTimeOut: 2000,
+                autoplayHoverPause: true,
+                responsive: {
+                    0: {
+                        items: 1,
+                        nav: false
+                    },
+                    600: {
+                        items: 2,
+                        nav: false
+                    },
+                    1000: {
+                        items: 3,
+                        nav: false
+                    }
+                }
+            });
+
+            const bars = document.querySelectorAll('.progress__bar');
+
+            bars.forEach(function (bar) {
+                let percentage = bar.dataset.percent;
+                let tooltip = bar.children[0];
+                tooltip.innerText = percentage + '%';
+                bar.style.width = percentage + '%';
+            })
+
+            // Counter
+
+            const counters = document.querySelectorAll('.counter');
+
+            function runCounter() {
+                counters.forEach(counter => {
+                    counter.innerText = 0;
+                    let target = +counter.dataset.count;
+                    let step = target / 100;
+
+                    let countIt = function () {
+                        let displayedCount = +counter.innerText;
+                        if (displayedCount < target) {
+                            counter.innerText = Math.ceil(displayedCount + step);
+                            setTimeout(countIt, 1);
+                        } else {
+                            counter.innerText = target;
+                        }
+                    }
+                    countIt();
+
+                })
+
+            }
+
+
+
+            let counterSection = document.querySelector('.counter__section');
+
+            let options = {
+                rootMargin: '0px 0px -200px 0px'
+            }
+            let done = 0;
+
+            const sectionObserver = new IntersectionObserver(function (entries) {
+
+                if (entries[0].isIntersecting && done !== 1) {
+                    done = 1;
+                    runCounter();
+                }
+            }, options)
+
+            sectionObserver.observe(counterSection);
+
+
+
+            // image filter 
+
+            var $wrapper = $('.portfolio__wrapper');
+            // Initialize isotope 
+            $wrapper.isotope({
+                filter: '*',
+                layoutMode: 'masonry',
+                animationOptions: {
+                    duration: 750,
+                    easing: 'linear'
+                }
+            });
+
+            let links = document.querySelectorAll('.tabs a');
+
+            links.forEach(link => {
+
+                let selector = link.dataset.filter;
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    $wrapper.isotope({
+                        filter: selector,
+                        layoutMode: 'masonry',
+                        animationOptions: {
+                            duration: 750,
+                            easing: 'linear'
+                        }
+                    });
+
+                    links.forEach(link => {
+                        link.classList.remove('active');
+                    })
+
+                    e.target.classList.add('active');
+
+                });
+            })
+
+        });
+    </script>
+</body>

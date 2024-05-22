@@ -1,0 +1,94 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 15px 30px;
+    font-size: 17px;
+    margin: 010px;
+    background-color: #F5F7FF;
+}
+
+.line{
+    border: 1px solid #4daea1;
+}
+.master{
+    border-radius: 8px;
+
+    background: #F5F7FF;
+    padding: 2.375rem 2.375rem;
+    width: 100%;
+    -webkit-flex-grow: 1;
+    flex-grow: 1;
+}
+.container{
+    background-color: white;
+    padding: 5px 20px 15px 20px;
+    border: 1px solid lightgray;
+    border-radius: 6px;
+}
+.container1{
+    background-color: white;
+    padding: 5px 20px 15px 20px;
+    border: 2px solid tomato;
+    border-radius: 6px;
+}
+
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="address"],
+input[type="password"],
+input[type="date"],
+select,
+option,
+textarea{
+    width: 100%;
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    margin: 8px;
+    color: rgb(32, 4, 4);
+}
+
+.main_heading{
+    text-align: center;
+    color: tomato ;
+}
+
+input[type="submit"],
+input[type="reset"]{
+    background-color: #4daea1;
+    color: white;
+    border-radius: 4px;
+    width: 100%;
+    cursor: grabbing;
+    border-color: rgb(29, 116, 187);
+
+}
+
+input[type="radio"],
+input[type="date"],
+input[type="checkbox"],
+select{
+    cursor: pointer;
+    column-rule: 4daea1;
+}
+
+.subheading{
+    color: rgb(29, 116, 187);
+}
+
+::placeholder,
+input[type="date"],
+select,
+option{
+    color: #4daea1;
+}
+
+
+.start{
+    align-items: center;
+}
